@@ -22,14 +22,20 @@ class Types extends React.Component {
       value: null
     }
   }
+
+  changeQueue = {}
+
+  saveChange = (type) => {
+    this.setState({value: type})
+  }
   
   onChange = (type) => {
-    this.setState({value: type})
+    this.saveChange(type)
   }
   
   checkOnHover = (type) => {
     if (pressed) {
-      this.setState({value: type})
+      this.saveChange(type)
     }
   }
   

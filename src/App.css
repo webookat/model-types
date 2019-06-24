@@ -25,6 +25,10 @@ hr {
   margin-top: 26px;
 }
 
+.marks h2 {
+  user-select: auto;
+}
+
 .marks hr {
   margin-bottom: 42px;
   width: calc(100vw - 52px);
@@ -46,6 +50,7 @@ hr {
   flex: 1;
   margin: 0;
   letter-spacing: 1px;
+  user-select: auto;
 }
 
 .models > dt > dl {
