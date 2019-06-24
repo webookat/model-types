@@ -2,23 +2,58 @@ import React from 'react'
 import './App.css'
 import json from './data.json'
 
-console.log(json)
+var pressed = false
+window.addEventListener('mousedown', () => pressed = true)
+window.addEventListener('mouseup', () => pressed = false)
 
 var types = [
   'Sedan',
-  'Hatchbadk',
+  'Hatchback',
   'Jeep',
   'Mini Jeep',
   'Mini Van'
 ]
 
-var Types = ({ mark, model }) =>
-  types.map((type, key) =>
-    <dt key={key}>
-      <input type='radio' name={mark + model} />
-      {type}
-    </dt>
-  )
+class Types extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      types: types,
+      value: null
+    }
+  }
+  
+  onChange = (type) => {
+    this.setState({value: type})
+  }
+  
+  checkOnHover = (type) => {
+    if (pressed) {
+      this.setState({value: type})
+    }
+  }
+  
+  render () {
+    var { types, value } = this.state
+    var { mark, model } = this.props
+    
+    return <dl className='types'>
+      {
+        types.map((type, key) =>
+          <dt key={key}>
+            <input type='radio' 
+              name={mark + model} 
+              onChange={e => this.onChange(type)}
+              onMouseOver={e => this.checkOnHover(type)}
+              value={type}
+              checked={type === value} />
+            <span>{type}</span>
+          </dt>
+        )
+      }
+    </dl>
+  }
+}
 
 var App = () =>
   <div className='app'>
@@ -39,11 +74,7 @@ var App = () =>
                     <dt key={key}>
                       <h4>{ model }</h4>
 
-                      <dl className='types'>
-                        {
-                          <Types mark={mark} model={model} />
-                        }
-                      </dl>
+                      <Types mark={mark} model={model} />
                     </dt>
                   )
                 }
