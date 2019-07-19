@@ -9,9 +9,12 @@ window.addEventListener('mouseup', () => pressed = false)
 var types = [
   'Sedan',
   'Hatchback',
-  'Jeep',
-  'Mini Jeep',
-  'Mini Van'
+  'SUV',
+  'Big SUV',
+  'Mini SUV',
+  'Mini Van',
+  'Bike',
+  'Other'
 ]
 
 class Types extends React.Component {
