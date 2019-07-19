@@ -82,9 +82,13 @@ hr {
   background: transparent;
   margin: 0;
   padding: 0;
-  /* outline: none; */
+  outline: 0;
   border-radius: 3px;
   cursor: pointer;
+}
+
+input:focus {
+  box-shadow: 0 0 5px 0 rgba(255, 255, 255, .5);
 }
 
 .types span {
