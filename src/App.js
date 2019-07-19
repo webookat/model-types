@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import './app.css'
 import json from './data.json'
 
 var pressed = false
