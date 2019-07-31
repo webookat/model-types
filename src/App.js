@@ -7,14 +7,14 @@ window.addEventListener('mousedown', () => pressed = true)
 window.addEventListener('mouseup', () => pressed = false)
 
 var types = [
-  'Sedan',
-  'Hatchback',
+  'სედანი',
+  'ჰეჩბეკი',
   'SUV',
-  'Big SUV',
-  'Mini SUV',
-  'Mini Van',
-  'Bike',
-  'Other'
+  'დიდი SUV',
+  'მინი SUV',
+  'მინივენი',
+  'ბაიკი',
+  'სხვა'
 ]
 
 class Types extends React.Component {
