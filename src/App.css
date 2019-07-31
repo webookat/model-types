@@ -1,9 +1,11 @@
+@import url("//cdn.web-fonts.ge/fonts/bpg-arial/css/bpg-arial.min.css");
+
 body {
   background: #131313;
   color: snow;
   margin: 0;
   padding: 0;
-  font-family: 'Avenir Next';
+  font-family: "BPG Arial", 'Avenir Next', 'Inter UI', 'Helvetica Neue', 'Helvetica', 'Calibri', 'Arial', sans-serif;
   font-size: 14px;
   line-height: 1.6;
   padding: 0;
@@ -88,7 +90,7 @@ hr {
 }
 
 input:focus {
-  box-shadow: 0 0 5px 0 rgba(255, 255, 255, .5);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, .5);
 }
 
 .types span {
@@ -100,6 +102,10 @@ input:focus {
   background: rgb(185, 218, 124);
   color: black;
   font-weight: 600;
+}
+
+input:focus:checked {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
 }
 
 .types input:checked + span {
